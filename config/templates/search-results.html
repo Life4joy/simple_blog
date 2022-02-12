@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load menu %}
+
+{% block content %}
+    <div class="main-container container" id="main-container">
+
+        <!-- Content -->
+        <div class="row">
+
+            <!-- post content -->
+            <div class="col-lg-8 blog__content mb-30">
+
+                <h1 class="mb-20">Search Result for '{{ search_by }}'</h1>
+                <form class="search-form mb-20" method="get" action="{% url 'search' %}">
+                    <input type="search" placeholder="Search an article" name="s" class="search-input">
+                    <button type="submit" class="search-button btn btn-lg btn-color btn-button">
+                        <i class="ui-search search-icon"></i>
+                    </button>
+                </form>
+                {% for post in posts %}
+                    <article class="entry post-list">
+                        <div class="entry__img-holder post-list__img-holder">
+                            <a href="single-post.html">
+                                <div class="thumb-container thumb-75">
+                                    <img data-src="{{ post.image.url }}" src="img/empty.png" class="entry__img lazyload"
+                                         alt="">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="entry__body post-list__body">
+                            <div class="entry__header">
+                                <a href="#" class="entry__meta-category">{{ post.category }}</a>
+                                <h2 class="entry__title">
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                </h2>
+                                <ul class="entry__meta">
+                                    <li class="entry__meta-author">
+                                        <i class="ui-author"></i>
+                                        <a>{{ post.author }}</a>
+                                    </li>
+                                    <li class="entry__meta-date">
+                                        <i class="ui-date"></i>
+                                        {{ post.timestamp }}
+                                    </li>
+                                    <li class="entry__meta-comments">
+                                        <i class="ui-comments"></i>
+                                        <a>{{ post.comments.count }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>{{ post.content|safe|truncatewords:20 }}</p>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+
+                <!-- Pagination -->
+                <nav class="pagination col-6 offset-6">
+                    {% if page_obj.has_other_pages %}
+                        {% if page_obj.has_previous %}
+                            <a href="?{{ s }}page={{ page_obj.previous_page_number }}"
+                               class="pagination__page pagination__icon pagination__page--next"><i
+                                    class="ui-arrow-left"></i></a>
+                        {% endif %}
+                        {% for p in page_obj.paginator.page_range %}
+                            {% if page_obj.number == p %}
+                                <span class="pagination__page pagination__page--current">{{ p }}</span>
+                            {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3  %}
+                                <a href="?{{ s }}page={{ p }}" class="pagination__page">{{ p }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <a href="?{{ s }}page={{ page_obj.next_page_number }}"
+                               class="pagination__page pagination__icon pagination__page--next"><i
+                                    class="ui-arrow-right"></i></a>
+                        {% endif %}
+                    {% endif %}
+                </nav>
+
+            </div> <!-- end col -->
+
+            {% trend_latest_com %}
+        </div> <!-- end content -->
+    </div> <!-- end main container -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

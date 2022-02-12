@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load menu %}
+{% block content %}
+    <div class="main-container container" id="main-container">
+
+        <!-- Content -->
+        <div class="row">
+
+            <!-- post content -->
+            <div class="col-lg-8 blog__content mb-30">
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <!-- standard post -->
+                <article class="entry">
+
+                    <div class="single-post__entry-header entry__header">
+                        <a href="#" class="entry__meta-category">{{ post.category }}</a>
+                        <h1 class="single-post__entry-title">
+                            {{ post.title }}
+                        </h1>
+
+                        <ul class="entry__meta">
+                            <li class="entry__meta-author">
+                                <i class="ui-author"></i>
+                                <a>{{ post.author }}</a>
+                            </li>
+                            <li class="entry__meta-date">
+                                <i class="ui-date"></i>
+                                {{ post.timestamp|date:"H:i" }}
+                            </li>
+                            <li class="entry__meta-comments">
+                                <i class="ui-comments"></i>
+                                <a>{{ post.comments.count }}</a>
+                            </li>
+                            <li>
+                                <a>{{ post.views }} views</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="entry__img-holder">
+                        <img src="{{ post.image.url }}" alt="" class="entry__img">
+                    </div>
+
+                    <div class="entry__article">
+                        {{ post.content|safe }}
+                    </div>
+
+
+                </article> <!-- end standard post -->
+                <div class="widget widget_mc4wp_form_widget">
+                    <h4 class="widget-title">Subscribe for news</h4>
+                    <form class="mc4wp-form" method="post" action="{% url 'subscribe' post.id %}">
+                        {% csrf_token %}
+                        <div class="mc4wp-form-fields">
+                            <p>
+                                <input type="email" name="email" placeholder="Your email" required="">
+                            </p>
+                            <p>
+                                <input type="submit" class="btn btn-lg btn-color" value="Subscribe">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div id="respond" class="comment-respond">
+                    <div class="title-wrap">
+                        <h5 class="comment-respond__title uppercase">Leave a Reply</h5>
+                    </div>
+                    <form id="form" class="comment-form" method="POST" action="{% url 'add-comment' post.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="parent" id="parent">
+                        <p class="comment-form-comment">
+                            <textarea id="comment" name="text" rows="5"
+                                      placeholder="Comment*"></textarea>
+                        </p>
+
+                        <div class="row row-20">
+                            <div class="col-lg-4">
+                                <input name="name" id="name" type="text" placeholder="Name*">
+                            </div>
+                            <div class="col-lg-4">
+                                <input name="email" id="email" type="email" placeholder="Email*">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-color btn-button">Post Comment
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="entry-comments mt-30">
+                    <div class="title-wrap mt-40">
+                        <h5 class="uppercase">Comments ({{ post.comments.count }})</h5>
+                    </div>
+                    <ul class="comment-list">
+                        {% for comment in post.get_comments %}
+                            <li class="comment">
+
+                                <div class="comment-body">
+                                    <div class="comment-text">
+                                        <h6 class="comment-author">{{ comment.name }}</h6>
+                                        <div class="comment-metadata">
+                                            <a class="comment-date">{{ comment.timestamp|timesince }} later</a>
+                                        </div>
+                                        <p>{{ comment.text }}</p>
+                                        <a href="#respond" class="comment-reply"
+                                           onclick="addComment('{{ comment.name }}', '{{ comment.id }}')">Reply</a>
+                                    </div>
+                                </div>
+                                {% for child in comment.comment_set.all %}
+                                    <ul class="children">
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <div class="comment-text">
+                                                    <h6 class="comment-author">{{ child.name }}</h6>
+                                                    <div class="comment-metadata">
+                                                        <a class="comment-date">{{ child.timestamp|timesince }}
+                                                            later</a>
+                                                    </div>
+                                                    <p>{{ child.text }}</p>
+                                                </div>
+                                            </div>
+                                        </li> <!-- end reply comment -->
+                                    </ul>
+                                {% endfor %}
+
+                            </li>
+                        {% endfor %}
+
+
+                    </ul>
+                </div>
+
+
+            </div> <!-- end col -->
+            {% trend_latest_com %}
+
+        </div> <!-- end content -->
+    </div> <!-- end main container -->
+    <script>
+        function addComment(name, id) {
+            document.getElementById("parent").value = id;
+            document.getElementById("comment").innerText = `${name}, `
+        }
+    </script>
+{% endblock %}
+
+

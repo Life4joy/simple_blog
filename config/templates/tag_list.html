@@ -1,0 +1,494 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body class="bg-light">
+    <main class="main oh" id="main">
+        <div class="main-container container mt-40" id="main-container">
+            <div class="row">
+
+                <!-- Posts -->
+                <div class="col-lg-8 blog__content mb-30">
+
+                    <!-- Hot News -->
+                    <section class="section tab-post mb-10">
+                        <div class="title-wrap">
+                            <h3 class="section-title">Hot News</h3>
+
+                            <div class="tabs tab-post__tabs">
+                                <ul class="tabs__list">
+                                    <li class="tabs__item tabs__item--active">
+                                        <a href="#tab-all" class="tabs__trigger">All</a>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <a href="#tab-world" class="tabs__trigger">World</a>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <a href="#tab-business" class="tabs__trigger">Business</a>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <a href="#tab-politics" class="tabs__trigger">Politics</a>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <a href="#tab-marketing" class="tabs__trigger">Marketing</a>
+                                    </li>
+                                </ul> <!-- end tabs -->
+                            </div>
+                        </div>
+
+                        <!-- tab content -->
+                        <div class="tabs__content tabs__content-trigger tab-post__tabs-content">
+
+                            <div class="tabs__content-pane tabs__content-pane--active" id="tab-all">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_1.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">science</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">Optimal Amount of Rainfall for
+                                                            Plants</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_2.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">business</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">BRICS Nations Agree to Create Own
+                                                            Development Bank</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div> <!-- end pane 1 -->
+                            <div class="tabs__content-pane" id="tab-world">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_1.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">science</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">Optimal Amount of Rainfall for
+                                                            Plants</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_2.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">business</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">BRICS Nations Agree to Create Own
+                                                            Development Bank</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div> <!-- end pane 2 -->
+                            <div class="tabs__content-pane" id="tab-business">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_1.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">science</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">Optimal Amount of Rainfall for
+                                                            Plants</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_2.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">business</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">BRICS Nations Agree to Create Own
+                                                            Development Bank</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div> <!-- end pane 3 -->
+                            <div class="tabs__content-pane" id="tab-politics">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_1.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">science</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">Optimal Amount of Rainfall for
+                                                            Plants</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_2.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">business</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">BRICS Nations Agree to Create Own
+                                                            Development Bank</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div> <!-- end pane 4 -->
+                            <div class="tabs__content-pane" id="tab-marketing">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_1.jpg' %}"
+                                                             src="{% static 'img/empty.png' %}"
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">science</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">Optimal Amount of Rainfall for
+                                                            Plants</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <article class="entry">
+                                            <div class="entry__img-holder">
+                                                <a href="single-post.html">
+                                                    <div class="thumb-container thumb-75">
+                                                        <img data-src="{% static 'img/blog/grid_post_img_2.jpg' %}"
+                                                             src="{% static 'img/empty.png' %} "
+                                                             class="entry__img lazyload" alt=""/>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="entry__body">
+                                                <div class="entry__header">
+                                                    <a href="#" class="entry__meta-category">business</a>
+                                                    <h2 class="entry__title">
+                                                        <a href="single-post.html">BRICS Nations Agree to Create Own
+                                                            Development Bank</a>
+                                                    </h2>
+                                                    <ul class="entry__meta">
+                                                        <li class="entry__meta-author">
+                                                            <i class="ui-author"></i>
+                                                            <a href="#">DeoThemes</a>
+                                                        </li>
+                                                        <li class="entry__meta-date">
+                                                            <i class="ui-date"></i>
+                                                            21 October, 2017
+                                                        </li>
+                                                        <li class="entry__meta-comments">
+                                                            <i class="ui-comments"></i>
+                                                            <a href="#">115</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry__excerpt">
+                                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia
+                                                        nostra, per inceptos. Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit...</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div> <!-- end pane 5 -->
+                        </div> <!-- end tab content -->
+                    </section> <!-- end hot news -->
+
+                </div> <!-- end posts -->
+
+                {% include 'sidebar.html' %}
+
+
+            </div>
+        </div>
+    </main>
+    </body>
+{% endblock %}

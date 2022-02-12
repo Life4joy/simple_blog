@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="main-container container mc4wp-form widget widget_mc4wp_form_widget" style="">
+        <h3>Create a post</h3>
+        {{ form.media }}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Save" class="btn btn-lg btn-color btn-button">
+        </form>
+    </div>
+
+{#    <script>#}
+{#        function autoaddusername(){#}
+{##}
+{#        }#}
+{#    </script>#}
+
+{% endblock %}

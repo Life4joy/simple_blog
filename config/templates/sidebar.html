@@ -1,0 +1,124 @@
+{% load static %}
+<aside class="col-lg-4 sidebar sidebar--right">
+
+
+    <div class="widget widget-tabpost">
+        <div class="tabs widget-tabpost__tabs">
+            <ul class="tabs__list widget-tabpost__tabs-list">
+                <li class="tabs__item widget-tabpost__tabs-item tabs__item--active">
+                    <a href="#tab-trending" class="tabs__url tabs__trigger widget-tabpost__tabs-url">Trending</a>
+                </li>
+                <li class="tabs__item widget-tabpost__tabs-item">
+                    <a href="#tab-latest"
+                       class="tabs__url tabs__trigger widget-tabpost__tabs-url">Latest</a>
+                </li>
+                <li class="tabs__item widget-tabpost__tabs-item">
+                    <a href="#tab-comments" class="tabs__url tabs__trigger widget-tabpost__tabs-url">Comments</a>
+                </li>
+            </ul> <!-- end tabs -->
+
+            <!-- tab content -->
+            <div class="tabs__content tabs__content-trigger widget-tabpost__tabs-content">
+
+                <div class="tabs__content-pane tabs__content-pane--active" id="tab-trending">
+                    <ul class="post-list-small">
+                        {% for trend in trending %}
+                            <li class="post-list-small__item">
+                                <article class="post-list-small__entry clearfix">
+                                    <div class="post-list-small__img-holder">
+                                        <div class="thumb-container thumb-75">
+                                            <a href="{{ trend.get_absolute_url }}">
+                                                <img data-src="{{ trend.image.url }}" src="img/empty.png"
+                                                     alt="" class=" lazyload">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="post-list-small__body">
+                                        <h3 class="post-list-small__entry-title">
+                                            <a href="{{ trend.get_absolute_url }}">{{ trend.title }}</a>
+                                        </h3>
+                                        <ul class="entry__meta">
+                                            <li class="entry__meta-date">
+                                                <i class="ui-date"></i>
+                                                {{ trend.timestamp }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="tabs__content-pane" id="tab-latest">
+                    <ul class="post-list-small">
+                        {% for last in latest %}
+                            <li class="post-list-small__item">
+                                <article class="post-list-small__entry clearfix">
+                                    <div class="post-list-small__img-holder">
+                                        <div class="thumb-container thumb-75">
+                                            <a href="single-post.html">
+                                                <img data-src="{{ last.image.url }}" src="img/empty.png"
+                                                     alt="" class=" lazyload">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="post-list-small__body">
+                                        <h3 class="post-list-small__entry-title">
+                                            <a href="{{ last.get_absolute_url }}">{{ last.title }}</a>
+                                        </h3>
+                                        <ul class="entry__meta">
+                                            <li class="entry__meta-date">
+                                                <i class="ui-date"></i>
+                                                {{ last.timestamp }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="tabs__content-pane" id="tab-comments">
+                    <ul class="post-list-small">
+                        {% for com in by_comments %}
+                            <li class="post-list-small__item">
+                                <article class="post-list-small__entry clearfix">
+                                    <div class="post-list-small__img-holder">
+                                        <div class="thumb-container thumb-75">
+                                            <a href="single-post.html">
+                                                <img data-src="{{ com.image.url }}" src="img/empty.png"
+                                                     alt="" class=" lazyload">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="post-list-small__body">
+                                        <h3 class="post-list-small__entry-title">
+                                            <a href="{{ com.get_absolute_url }}">{{ com.title }}</a>
+                                        </h3>
+                                        <ul class="entry__meta">
+                                            <li class="entry__meta-date">
+                                                <i class="ui-date"></i>
+                                                {{ com.timestamp }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div> <!-- end tab content -->
+        </div> <!-- end tabs -->
+    </div>
+    <div class="widget widget_tag_cloud">
+        <h4 class="widget-title">Categories</h4>
+        <div class="tagcloud">
+            {% for cat in category_count %}
+                <a href="#">{{ cat.title|upper }}(<strong>{{ cat.pcount }})</strong></a>
+            {% endfor %}
+        </div>
+    </div>
+</aside> <!-- end sidebar -->
